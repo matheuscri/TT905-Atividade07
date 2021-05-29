@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+
 // Permissões
 var cors = require('cors');
 app.use(cors());
@@ -17,7 +18,7 @@ app.get('/',
         //soundtrackwaste\/cantores");
     }
 );
-const soundtrackwaste = [
+const soundtrack = {"Tony_Hawk_American_Wasteland":[
     "7 Seconds - We're Gonna Fight","Alkaline Trio - Wash Away (Beneath the Shadows) (T.S.O.L.)",
     "Bad Religion - We're Only Gonna Die","Black Flag - Rise Above","Circle Jerks - Wild in the Streets",
     "Dead Kennedys - California Über Alles","Emanuel - Search & Destroy (The Stooges)",
@@ -28,13 +29,27 @@ const soundtrackwaste = [
     "The Network - Teenagers From Mars (The Misfits)","Thrice - Seeing Red / Screaming at a Wall (Minor Threat)",
     "An Endless Sporadic - Sun of Pearl","Frank Black - Los Angeles","Nassim - Rawhide","The Faint - I Disappear",
     "Thursday - Ever Fallen In Love (The Buzzcocks)","Public Enemy feat. Ice Cube and Big Daddy Kane - Burn Hollywood Burn"
-    ,0
-]
+   ,0],
+    "Madden_NFL_10": ["2Pac- Can’t See Me","Airbourne- Heads are Gonna Roll",
+        "Alice In Chains- Them Bones","B.oB.- Created A Monster",
+        "Bang Camero- Revolution","Beastie Boys- Sabotage",
+        "Black Sabath- Paraniod","Cypress Hill- Get ‘Em Up",
+        "Helmet- Unsung","Iron Maiden- Aces High",
+        "Judas Priest- Painkiller","Kid Rock- I Am The Bullgod",
+        "Killswitch Engage- Reckoning","Korn- Blind",
+        "Mastodon- Divinations","Nas Feat. Puff Daddy- Hate Me Now",
+        "Nirvana- Breed","Pantera- Walk",
+        "Public Enemy- Shut Em Down","Rage Against The Machine- Guerilla Radio",
+        "Set Your Goals- Gaia Bleeds (Make Way For Man)","Slipknot- Duality",
+        "System Of A Down- Sugar","The Vanity Plan- Before I Die",
+        "Young Dre The Truth- Cheah Beah",0]
+        
+}
 
-app.get('/americanwastelandmusic',
-function (req, res){    
-    //res.send("Tony Hawk's: American Wasteland Soundtrack");
-    res.send(soundtrackwaste.filter(Boolean));
+
+app.get('/soundtrack',
+function (req, res){   
+    res.send(soundtrack.Madden_NFL_10[0]);
     }
 )
 
