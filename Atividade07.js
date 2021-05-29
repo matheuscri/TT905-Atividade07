@@ -12,23 +12,31 @@ app.listen(process.env.PORT || 3001);
 
 app.get('/', 
     function (req, res){    
-        res.send("Hello World1111");
+        res.send("Página Inicial");
+        res.send("Para outras paginas digite '/' e o seguinte nome:")
     }
 );
 
-app.get('/hello',
+const soundtrackwaste = [
+    ""
+]
+
+app.get('/americanwastelandmusic',
 function (req, res){    
-    res.send("Hello de Novo");
+    res.send("Tony Hawk's: American Wasteland Soundtrack");
     }
 )
 
 const mensagens = [
-    "Skate", "Santos","Chorão", 0 
+    "Hot Chilli Peppers","Chorão","Charlie Brown Jr","Alexandre Magno Abrão","Rafa Moreira",
+    "Ximbinha", "Supla","Guitarra Humana","Péricles","Dilma Roussef","Cleiton Rasta Dj","Alcides","Latino",
+    "Mc Catra","Mc Carlos Funk Sumaré","Pabllo Vitar", 0 
 ];
 
-app.get('/mensagens',
+app.get('/cantores',
     function(req, res){
         // res.send(mensagens);
+        res.send("Cantores Aleatórios")
         res.send(mensagens.filter(Boolean));
     }
 );
