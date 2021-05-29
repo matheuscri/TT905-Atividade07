@@ -12,8 +12,8 @@ app.listen(process.env.PORT || 3001);
 
 app.get('/', 
     function (req, res){    
-        res.send("Página Inicial \n\ Para outras paginas digite '/' e o seguinte nome: \n\
-        /soundtrackwaste \n\ /cantores");
+        res.send("Página Inicial \n Para outras paginas digite '/' e o seguinte nome: \n\
+        /soundtrackwaste \n /cantores");
     }
 );
 
