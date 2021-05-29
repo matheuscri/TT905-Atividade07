@@ -12,18 +12,29 @@ app.listen(process.env.PORT || 3001);
 
 app.get('/', 
     function (req, res){    
-        res.send("Página Inicial");
-        res.send("Para outras paginas digite '/' e o seguinte nome:")
+        res.send("Página Inicial \n\ Para outras paginas digite '/' e o seguinte nome: \n\
+        /soundtrackwaste \n\ /cantores");
     }
 );
 
 const soundtrackwaste = [
-    ""
+    "7 Seconds - We're Gonna Fight","Alkaline Trio - Wash Away (Beneath the Shadows) (T.S.O.L.)",
+    "Bad Religion - We're Only Gonna Die","Black Flag - Rise Above","Circle Jerks - Wild in the Streets",
+    "Dead Kennedys - California Über Alles","Emanuel - Search & Destroy (The Stooges)",
+    "Fall Out Boy - Start Today (Gorilla Biscuits)","From Autumn To Ashes - Let's Have a War (Fear)",
+    "Green Day - Holiday","My Chemical Romance - Astro Zombies (The Misfits)",
+    "Rise Against - Fix Me (Black Flag)","Senses Fail - Institutionalized (Suicidal Tendencies)",
+    "Taking Back Sunday - Suburban Home / I Like Food (Descendents)","The God Awfuls - Watch It Fall",
+    "The Network - Teenagers From Mars (The Misfits)","Thrice - Seeing Red / Screaming at a Wall (Minor Threat)",
+    "An Endless Sporadic - Sun of Pearl","Frank Black - Los Angeles","Nassim - Rawhide","The Faint - I Disappear",
+    "Thursday - Ever Fallen In Love (The Buzzcocks)","Public Enemy feat. Ice Cube and Big Daddy Kane - Burn Hollywood Burn"
+    ,0
 ]
 
 app.get('/americanwastelandmusic',
 function (req, res){    
-    res.send("Tony Hawk's: American Wasteland Soundtrack");
+    //res.send("Tony Hawk's: American Wasteland Soundtrack");
+    res.send(soundtrackwaste.filter(Boolean));
     }
 )
 
