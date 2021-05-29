@@ -12,11 +12,11 @@ app.listen(process.env.PORT || 3001);
 
 app.get('/', 
     function (req, res){    
-        res.send("Página Inicial \n Para outras paginas digite '/' e o seguinte nome: \n\
-        /soundtrackwaste \n /cantores");
+        res.send("Página Inicial ");
+        //<br/>Para outras paginas digite '/' e o seguinte nome:\
+        //soundtrackwaste\/cantores");
     }
 );
-
 const soundtrackwaste = [
     "7 Seconds - We're Gonna Fight","Alkaline Trio - Wash Away (Beneath the Shadows) (T.S.O.L.)",
     "Bad Religion - We're Only Gonna Die","Black Flag - Rise Above","Circle Jerks - Wild in the Streets",
@@ -47,7 +47,7 @@ const mensagens = [
 app.get('/cantores',
     function(req, res){
         // res.send(mensagens);
-        res.send("Cantores Aleatórios")
+        //res.send("Cantores Aleatórios")
         res.send(mensagens.filter(Boolean));
     }
 );
