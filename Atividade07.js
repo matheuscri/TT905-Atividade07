@@ -18,6 +18,10 @@ app.get('/',
         //soundtrackwaste\/cantores");
     }
 );
+
+// ===================================================================================
+// ======================== Vetor de objetos Soundtrack ==============================
+
 const soundtrack = {"Tony_Hawk_American_Wasteland":[
     "7 Seconds - We're Gonna Fight","Alkaline Trio - Wash Away (Beneath the Shadows) (T.S.O.L.)",
     "Bad Religion - We're Only Gonna Die","Black Flag - Rise Above","Circle Jerks - Wild in the Streets",
@@ -91,7 +95,7 @@ app.get('/soundtrack/Tony_Hawk_American_Wasteland/:id',
         }
     }
 )
-//Get usar JSON {"Music": "o que queser"}
+
 app.get('/soundtrack/Madden_NFL_10/:id',
     function(req, res){
         const id = req.params.id - 1;
@@ -104,7 +108,7 @@ app.get('/soundtrack/Madden_NFL_10/:id',
         }
     }
 )
-//Get usar JSON {"Music": "o que queser"}
+
 app.get('/soundtrack/Guitar_Hero/:id',
     function(req, res){
         const id = req.params.id - 1;
@@ -117,7 +121,7 @@ app.get('/soundtrack/Guitar_Hero/:id',
         }
     }
 )
-//Get usar JSON {"Music": "o que queser"}
+
 app.post('/soundtrack/Tony_Hawk_American_Wasteland', 
     (req, res) => {
         console.log(req.body.Music);
@@ -126,6 +130,7 @@ app.post('/soundtrack/Tony_Hawk_American_Wasteland',
         res.send("Adicionado nova música")
     }
 );
+//Get usar JSON {"Music": "o que queser"}
 app.post('/soundtrack/Madden_NFL_10', 
     (req, res) => {
         console.log(req.body.Music);
@@ -134,6 +139,7 @@ app.post('/soundtrack/Madden_NFL_10',
         res.send("Adicionado nova música")
     }
 );
+//Get usar JSON {"Music": "o que queser"}
 app.post('/soundtrack/Guitar_Hero/', 
     (req, res) => {
         console.log(req.body.Music);
@@ -142,6 +148,7 @@ app.post('/soundtrack/Guitar_Hero/',
         res.send("Adicionado nova música")
     }
 );
+//Get usar JSON {"Music": "o que queser"}
 app.put('/soundtrack/Tony_Hawk_American_Wasteland/:id',
     (req, res) => {
         const id = req.params.id - 1;
@@ -191,10 +198,14 @@ app.delete('/soundtrack/Guitar_Hero/:id',
     }
 );
 
+
+// ==================================================================================
+// ========================== Vetor de Strings Cantores =============================
+
 const cantores = [
     "Hot Chilli Peppers","Chorão","Charlie Brown Jr","Alexandre Magno Abrão","Rafa Moreira",
     "Ximbinha", "Supla","Guitarra Humana","Péricles","Dilma Roussef","Cleiton Rasta Dj","Alcides","Latino",
-    "Mc Catra","Mc Carlos Funk Sumaré","Pabllo Vitar", 0 
+    "Mc Catra","Mc Carlos Funk Sumaré","Pabllo Vitar"
 ];
 
 app.get('/cantores',
@@ -225,7 +236,7 @@ app.post('/cantores',
         cantores.push(Cantor);
         res.send("Novo cantor.")
     }
-);
+); // Ao usar post no JSON usar const Cantor não o vetor "cantores"
 
 app.put('/cantores/:id',
     (req, res) => {
