@@ -259,7 +259,7 @@ app.delete('/cantores/:id',
 // =========================================================================================
 // ========================== Vetor de objetos Caracteristicas =============================
 
-const algo ={ "mandato":{'nome':"Math",'tipo':"pessoa",},
+const algo ={ "mandato":{'nome':"Math",'tipo':"pessoa"},
  "josnei":{'nome':"cotil",'tipo':"Bombado"},
   "irineu":{'nome':"Lula", "tipo":"Assasino"}
 }
