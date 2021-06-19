@@ -259,9 +259,17 @@ app.delete('/cantores/:id',
 // =========================================================================================
 // ========================== Vetor de objetos Caracteristicas =============================
 
-const algo ={ "mandato":{'nome':"Math",'tipo':"pessoa"},
- "josnei":{'nome':"cotil",'tipo':"Bombado"},
-  "irineu":{'nome':"Lula", "tipo":"Assasino"}
+const algo = { "Meu Novo Mundo":{'Artista':"Chorão",'Gênero':"Rock Nacional"},
+ "Help":{'Artista':"Borgore",'Gênero':"Eletronica"},
+  "GNAT":{'Artista':"Eminem", "Gênero":"Hip-Hop"},
+  "Carioca Girls":{'Artista':"Max", "Gênero":"2012"},
+  "SAD!":{'Artista':"XXXTentacion", "Gênero":"Suicide"},
+  "Crab Rave":{'Artista':"Noisestorm", "Gênero":"Eletronica"},
+
+
+
+
+
 }
 
 app.get('/algo',
@@ -285,6 +293,19 @@ function (req, res){
     res.send(soundtrack.Guitar_hero);
     }
 )
+
+app.get('/algo/:id',
+    function(req, res){
+        const id = req.params.id - 1;
+        const Music = algo[id];
+
+        if (!Music){
+            res.send("A posição da música do jogo não foi encontrado, verifique se esse existe na lista");
+        } else {
+            res.send(Music);
+        }
+    })
+
 app.get('/soundtrack/Tony_Hawk_American_Wasteland/:id',
     function(req, res){
         const id = req.params.id - 1;
@@ -296,7 +317,7 @@ app.get('/soundtrack/Tony_Hawk_American_Wasteland/:id',
             res.send(Music);
         }
     }
-)
+);
 
 app.get('/soundtrack/Madden_NFL_10/:id',
     function(req, res){
