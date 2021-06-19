@@ -297,7 +297,7 @@ function (req, res){
 app.get('/algo/help/:id',
     function(req, res){
         const id = req.params.id - 1;
-        const Music = algo.help[id];
+        const Music = algo.Help[id];
 
         if (!Music){
             res.send("A posição da música do jogo não foi encontrado, verifique se esse existe na lista");
