@@ -255,3 +255,147 @@ app.delete('/cantores/:id',
         res.send("Cantor removido do corração com sucesso");
     }
 );
+
+// =========================================================================================
+// ========================== Vetor de objetos Caracteristicas =============================
+
+const algo ={ "mandato":{'nome':"Math",'tipo':"pessoa",},
+ "josnei":{'nome':"cotil",'tipo':"Bombado"},
+  "irineu":{'nome':"Lula", "tipo":"Assasino"}
+}
+
+app.get('/algo',
+function (req, res){   
+    res.send(algo);
+    }
+)
+app.get('/soundtrack/Tony_Hawk_American_Wasteland',
+function (req, res){   
+    res.send(soundtrack.Tony_Hawk_American_Wasteland);
+    }
+)
+app.get('/soundtrack/Madden_NFL_10',
+function (req, res){   
+    res.send(soundtrack.Madden_NFL_10);
+    }
+)
+    
+app.get('/soundtrack/Guitar_Hero',
+function (req, res){   
+    res.send(soundtrack.Guitar_hero);
+    }
+)
+app.get('/soundtrack/Tony_Hawk_American_Wasteland/:id',
+    function(req, res){
+        const id = req.params.id - 1;
+        const Music = soundtrack.Tony_Hawk_American_Wasteland[id];
+
+        if (!Music){
+            res.send("A posição da música do jogo não foi encontrado, verifique se esse existe na lista");
+        } else {
+            res.send(Music);
+        }
+    }
+)
+
+app.get('/soundtrack/Madden_NFL_10/:id',
+    function(req, res){
+        const id = req.params.id - 1;
+        const Music = soundtrack.Madden_NFL_10[id];
+
+        if (!Music){
+            res.send("A posição da música do jogo não foi encontrado, verifique se esse existe na lista");
+        } else {
+            res.send(Music);
+        }
+    }
+)
+
+app.get('/soundtrack/Guitar_Hero/:id',
+    function(req, res){
+        const id = req.params.id - 1;
+        const Music = soundtrack.Guitar_hero[id];
+
+        if (!Music){
+            res.send("A posição da música do jogo não foi encontrado, verifique se esse existe na lista");
+        } else {
+            res.send(Music);
+        }
+    }
+)
+
+app.post('/soundtrack/Tony_Hawk_American_Wasteland', 
+    (req, res) => {
+        console.log(req.body.Music);
+        const Music = req.body.Music;
+        soundtrack.Tony_Hawk_American_Wasteland.push(Music);
+        res.send("Adicionado nova música")
+    }
+);
+//Get usar JSON {"Music": "o que queser"}
+app.post('/soundtrack/Madden_NFL_10', 
+    (req, res) => {
+        console.log(req.body.Music);
+        const Music = req.body.Music;
+        soundtrack.Madden_NFL_10.push(Music);
+        res.send("Adicionado nova música")
+    }
+);
+//Get usar JSON {"Music": "o que queser"}
+app.post('/soundtrack/Guitar_Hero/', 
+    (req, res) => {
+        console.log(req.body.Music);
+        const Music = req.body.Music;
+        soundtrack.Guitar_hero.push(Music);
+        res.send("Adicionado nova música")
+    }
+);
+//Get usar JSON {"Music": "o que queser"}
+app.put('/soundtrack/Tony_Hawk_American_Wasteland/:id',
+    (req, res) => {
+        const id = req.params.id - 1;
+        const Music = req.body.Music;
+        soundtrack.Tony_Hawk_American_Wasteland[id] = Music;        
+        res.send("Nome da música corrigida com sucesso.")
+    }
+)
+app.put('/soundtrack/Madden_NFL_10/:id',
+    (req, res) => {
+        const id = req.params.id - 1;
+        const Music = req.body.Music;
+        soundtrack.Madden_NFL_10[id] = Music;        
+        res.send("Nome da música corrigida com sucesso.")
+    }
+)
+app.put('/soundtrack/Guitar_Hero/:id',
+    (req, res) => {
+        const id = req.params.id - 1;
+        const Music = req.body.Music;
+        soundtrack.Guitar_hero[id] = Music;        
+        res.send("Nome da música corrigida com sucesso.")
+    }
+)
+app.delete('/soundtrack/Tony_Hawk_American_Wasteland/:id', 
+    (req, res) => {
+        const id = req.params.id - 1;
+        delete soundtrack.Tony_Hawk_American_Wasteland[id];
+
+        res.send("Música removida da lista com sucesso");
+    }
+);
+app.delete('/soundtrack/Madden_NFL_10/:id', 
+    (req, res) => {
+        const id = req.params.id - 1;
+        delete soundtrack.Madden_NFL_10[id];
+
+        res.send("Música removida da lista com sucesso");
+    }
+);
+app.delete('/soundtrack/Guitar_Hero/:id', 
+    (req, res) => {
+        const id = req.params.id - 1;
+        delete soundtrack.Guitar_hero[id];
+
+        res.send("Música removida da lista com sucesso");
+    }
+);
