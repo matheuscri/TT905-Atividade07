@@ -417,6 +417,12 @@ function (req, res){
     }
 )
 
+app.get('/algo/help/artista',
+function (req, res){   
+    res.send(algo.Help.Artista);
+    }
+)
+
 app.get('/algo/help/:id',
     function(req, res){
         const id = req.params.id - 1;
